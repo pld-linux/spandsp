@@ -1,4 +1,5 @@
 Summary:	DSP functions for telephony
+Summary(pl):	Funkcje DSP dla telefonii
 Name:		spandsp
 %define	_pre	pre10
 Version:	0.0.2
@@ -8,10 +9,10 @@ Group:		Libraries
 Source0:	ftp://ftp.opencall.org/pub/spandsp/%{name}-%{version}%{_pre}/%{name}-%{version}%{_pre}.tar.gz
 # Source0-md5:	ce09baba1fce9ffe3c702f8a910233a7
 URL:		http://www.soft-switch.org/
-BuildRequires:	libtiff-devel
-BuildRequires:	fltk-devel
-BuildRequires:	fftw-devel
 BuildRequires:	audiofile-devel
+BuildRequires:	libtiff-devel
+BuildRequires:	fftw-devel
+BuildRequires:	fltk-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -20,8 +21,9 @@ for telephony. It is designed to be independent of the telephony
 platform itself.
 
 %description -l pl
-spandsp to biblioteka obs³uguj±ca pakiety RTP/RTCP. Wiêcej informacji
-o protokole znajduje siê w RFC 1889 i 1890.
+spandsp to biblioteka udostêpniaj±ca wiele funkcji DSP potrzebnych dla
+telefonii. Jest zaprojektowana tak, by by³a niezale¿na od samej
+platformy telefonicznej.
 
 %package devel
 Summary:	Header files to develop applications using spandsp
@@ -56,7 +58,9 @@ Statyczna biblioteka spandsp.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} DESTDIR=$RPM_BUILD_ROOT install
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -fr $RPM_BUILD_ROOT
