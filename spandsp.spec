@@ -4,7 +4,7 @@ Name:		spandsp
 # do not upgrade to 0.0.3 series until it's stable
 %define	_pre	pre20
 Version:	0.0.2
-Release:	0.%{_pre}.1
+Release:	0.%{_pre}.2
 Epoch:		1
 License:	LGPL
 Group:		Libraries
@@ -32,7 +32,7 @@ platformy telefonicznej.
 Summary:	Header files to develop applications using spandsp
 Summary(pl):	Pliki nag³ówkowe do tworzenia aplikacji u¿ywaj±cych spandsp
 Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description devel
 Header files for the spandsp library.
@@ -44,7 +44,7 @@ Pliki nag³ówkowe dla biblioteki spandsp.
 Summary:	Static spandsp library
 Summary(pl):	Statyczna biblioteka spandsp
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}-%{release}
+Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
 Static spandsp library.
