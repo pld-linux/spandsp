@@ -1,0 +1,13 @@
+diff -urBb spandsp-0.0.2.org/src/spandsp.h spandsp-0.0.2/src/spandsp.h
+--- spandsp-0.0.2.org/src/spandsp.h	2005-08-13 12:06:48.000000000 +0200
++++ spandsp-0.0.2/src/spandsp.h	2005-10-08 23:50:04.184008750 +0200
+@@ -39,7 +39,9 @@
+ #include <spandsp/timing.h>
+ #include <spandsp/vector.h>
+ #include <spandsp/complex.h>
++#ifdef USE_MMX
+ #include <spandsp/mmx.h>
++#endif
+ #include <spandsp/arctan2.h>
+ #include <spandsp/biquad.h>
+ #include <spandsp/fir.h>
