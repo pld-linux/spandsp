@@ -8,15 +8,15 @@ Release:	0.%{_pre}.3
 Epoch:		1
 License:	LGPL
 Group:		Libraries
-Source0:	http://soft-switch.org/downloads/spandsp//%{name}-%{version}%{_pre}/%{name}-%{version}%{_pre}.tar.gz
+Source0:	http://soft-switch.org/downloads/spandsp/%{name}-%{version}%{_pre}/%{name}-%{version}%{_pre}.tar.gz
 # Source0-md5:	8d6e94a30fb4698b5f25eb93e26444e1
 Patch0:		%{name}-nommx.patch
 URL:		http://www.soft-switch.org/
 BuildRequires:	audiofile-devel
 BuildRequires:	automake
-BuildRequires:	libtiff-devel
 BuildRequires:	fftw-devel
 BuildRequires:	fltk-devel
+BuildRequires:	libtiff-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -69,7 +69,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
-rm -fr $RPM_BUILD_ROOT
+rm -rf $RPM_BUILD_ROOT
 
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
