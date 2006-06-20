@@ -2,14 +2,14 @@ Summary:	DSP functions for telephony
 Summary(pl):	Funkcje DSP dla telefonii
 Name:		spandsp
 # do not upgrade to 0.0.3 series until it's stable
-%define	_pre	pre25
+%define	_pre	pre26
 Version:	0.0.2
 Release:	0.%{_pre}.1
 Epoch:		1
 License:	LGPL
 Group:		Libraries
 Source0:	http://soft-switch.org/downloads/spandsp/%{name}-%{version}%{_pre}/%{name}-%{version}%{_pre}.tar.gz
-# Source0-md5:	2bbd518eec1ac0214d1d0f8abb6772a3
+# Source0-md5:	2b28a75b1d7c49616534bd7264317241
 Patch0:		%{name}-nommx.patch
 URL:		http://www.soft-switch.org/
 BuildRequires:	audiofile-devel
