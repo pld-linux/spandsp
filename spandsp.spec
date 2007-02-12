@@ -1,5 +1,5 @@
 Summary:	DSP functions for telephony
-Summary(pl):	Funkcje DSP dla telefonii
+Summary(pl.UTF-8):   Funkcje DSP dla telefonii
 Name:		spandsp
 # do not upgrade to 0.0.3 series until it's stable
 %define	_pre	pre26
@@ -24,33 +24,33 @@ spandsp is a library which provides many of the DSP functions needed
 for telephony. It is designed to be independent of the telephony
 platform itself.
 
-%description -l pl
-spandsp to biblioteka udostÍpniaj±ca wiele funkcji DSP potrzebnych dla
-telefonii. Jest zaprojektowana tak, by by≥a niezaleøna od samej
+%description -l pl.UTF-8
+spandsp to biblioteka udostƒôpniajƒÖca wiele funkcji DSP potrzebnych dla
+telefonii. Jest zaprojektowana tak, by by≈Ça niezale≈ºna od samej
 platformy telefonicznej.
 
 %package devel
 Summary:	Header files to develop applications using spandsp
-Summary(pl):	Pliki nag≥Ûwkowe do tworzenia aplikacji uøywaj±cych spandsp
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe do tworzenia aplikacji u≈ºywajƒÖcych spandsp
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description devel
 Header files for the spandsp library.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe dla biblioteki spandsp.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe dla biblioteki spandsp.
 
 %package static
 Summary:	Static spandsp library
-Summary(pl):	Statyczna biblioteka spandsp
+Summary(pl.UTF-8):   Statyczna biblioteka spandsp
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
 Static spandsp library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka spandsp.
 
 %prep
