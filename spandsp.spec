@@ -1,5 +1,5 @@
 Summary:	DSP functions for telephony
-Summary(pl.UTF-8):   Funkcje DSP dla telefonii
+Summary(pl.UTF-8):	Funkcje DSP dla telefonii
 Name:		spandsp
 # do not upgrade to 0.0.3 series until it's stable
 %define	_pre	pre26
@@ -31,7 +31,7 @@ platformy telefonicznej.
 
 %package devel
 Summary:	Header files to develop applications using spandsp
-Summary(pl.UTF-8):   Pliki nagłówkowe do tworzenia aplikacji używających spandsp
+Summary(pl.UTF-8):	Pliki nagłówkowe do tworzenia aplikacji używających spandsp
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -43,7 +43,7 @@ Pliki nagłówkowe dla biblioteki spandsp.
 
 %package static
 Summary:	Static spandsp library
-Summary(pl.UTF-8):   Statyczna biblioteka spandsp
+Summary(pl.UTF-8):	Statyczna biblioteka spandsp
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
