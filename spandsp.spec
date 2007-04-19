@@ -51,7 +51,7 @@ Static spandsp library.
 Statyczna biblioteka spandsp.
 
 %prep
-%setup -q -n spandsp-%{version}
+%setup -q
 
 %build
 install /usr/share/automake/config.* config
