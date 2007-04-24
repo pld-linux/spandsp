@@ -56,10 +56,10 @@ Statyczna biblioteka spandsp.
 %build
 install /usr/share/automake/config.* config
 %configure \
-%ifarch i686 athlon pentium4
+%ifarch athlon pentium3 pentium4
 	--enable-mmx \
 %endif
-%ifarch athlon
+%ifarch pentium3 pentium4
 	--enable-sse \
 %endif
 	--enable-doc
