@@ -12,6 +12,7 @@ Source0:	http://www.soft-switch.org/downloads/spandsp/%{name}-%{version}%{_pre}.
 URL:		http://www.soft-switch.org/
 BuildRequires:	audiofile-devel
 BuildRequires:	automake
+BuildRequires:	doxygen
 BuildRequires:	fftw-devel
 BuildRequires:	fltk-devel
 BuildRequires:	libtiff-devel
