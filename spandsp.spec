@@ -1,7 +1,7 @@
+%define	_pre	pre9
 Summary:	DSP functions for telephony
 Summary(pl.UTF-8):	Funkcje DSP dla telefonii
 Name:		spandsp
-%define	_pre	pre9
 Version:	0.0.4
 Release:	0.%{_pre}.1
 Epoch:		1
@@ -15,6 +15,11 @@ BuildRequires:	automake
 BuildRequires:	fftw-devel
 BuildRequires:	fltk-devel
 BuildRequires:	libtiff-devel
+BuildRequires:	libxml2-devel
+BuildRequires:	xorg-lib-libX11-devel
+BuildRequires:	xorg-lib-libXext-devel
+BuildRequires:	xorg-lib-libXft-devel
+BuildRequires:	xorg-proto-xproto-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
