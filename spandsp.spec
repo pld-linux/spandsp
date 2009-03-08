@@ -1,14 +1,14 @@
-%define	_pre	pre4
+%define	_pre	pre5
 Summary:	DSP functions for telephony
 Summary(pl.UTF-8):	Funkcje DSP dla telefonii
 Name:		spandsp
-Version:	0.0.5
+Version:	0.0.6
 Release:	0.%{_pre}.1
 Epoch:		1
 License:	LGPL
 Group:		Libraries
 Source0:	http://www.soft-switch.org/downloads/spandsp/%{name}-%{version}%{_pre}.tgz
-# Source0-md5:	fe83ed37a7831f0dd38e7ef4e7e6fd9e
+# Source0-md5:	5e7946c452558b4858c9e3ef4e948848
 URL:		http://www.soft-switch.org/
 BuildRequires:	audiofile-devel
 BuildRequires:	automake
@@ -18,6 +18,7 @@ BuildRequires:	fltk-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	libxslt-progs
+BuildRequires:	pkgconfig
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXft-devel
@@ -88,13 +89,14 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README NEWS AUTHORS ChangeLog
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/lib*.so.*
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/*.la
 %{_includedir}/*
+%{_pkgconfigdir}/spandsp.pc
 
 %files static
 %defattr(644,root,root,755)
