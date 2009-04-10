@@ -5,7 +5,7 @@ Name:		spandsp
 Version:	0.0.6
 Release:	0.%{_pre}.1
 Epoch:		1
-License:	LGPL
+License:	LGPL v2.1
 Group:		Libraries
 Source0:	http://www.soft-switch.org/downloads/spandsp/%{name}-%{version}%{_pre}.tgz
 # Source0-md5:	5e7946c452558b4858c9e3ef4e948848
@@ -40,6 +40,7 @@ Summary:	Header files to develop applications using spandsp
 Summary(pl.UTF-8):	Pliki nagłówkowe do tworzenia aplikacji używających spandsp
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	libtiff-devel
 
 %description devel
 Header files for the spandsp library.
@@ -89,15 +90,17 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README NEWS AUTHORS ChangeLog
-%attr(755,root,root) %{_libdir}/lib*.so.*
+%attr(755,root,root) %{_libdir}/libspandsp.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libspandsp.so.2
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/*.la
-%{_includedir}/*
+%attr(755,root,root) %{_libdir}/libspandsp.so
+%{_libdir}/libspandsp.la
+%{_includedir}/spandsp
+%{_includedir}/spandsp.h
 %{_pkgconfigdir}/spandsp.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libspandsp.a
