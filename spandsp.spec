@@ -1,3 +1,8 @@
+#
+# TODO:
+#	- build and package the 'tests' (sample programs)
+#		should be conditional, as adds BR!
+#
 %define	_pre	pre18
 Summary:	DSP functions for telephony
 Summary(pl.UTF-8):	Funkcje DSP dla telefonii
@@ -14,15 +19,10 @@ BuildRequires:	audiofile-devel
 BuildRequires:	automake
 BuildRequires:	doxygen
 BuildRequires:	fftw-devel
-BuildRequires:	fltk-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
-BuildRequires:	xorg-lib-libX11-devel
-BuildRequires:	xorg-lib-libXext-devel
-BuildRequires:	xorg-lib-libXft-devel
-BuildRequires:	xorg-proto-xproto-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -66,6 +66,7 @@ Statyczna biblioteka spandsp.
 %build
 install /usr/share/automake/config.* config
 %configure \
+	--disable-tests \
 %ifarch athlon pentium3 pentium4
 	--enable-mmx \
 %endif
