@@ -4,11 +4,12 @@
 #		should be conditional, as adds BR!
 #
 %define	_pre	pre18
+%define	rel	2
 Summary:	DSP functions for telephony
 Summary(pl.UTF-8):	Funkcje DSP dla telefonii
 Name:		spandsp
 Version:	0.0.6
-Release:	0.%{_pre}.1
+Release:	0.%{_pre}.%{rel}
 Epoch:		1
 License:	LGPL v2.1
 Group:		Libraries
