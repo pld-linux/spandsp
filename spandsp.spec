@@ -3,18 +3,18 @@
 #	- build and package the 'tests' (sample programs)
 #		should be conditional, as adds BR!
 #
-%define	_pre	pre18
+%define	subver	pre20
 %define	rel	2
 Summary:	DSP functions for telephony
 Summary(pl.UTF-8):	Funkcje DSP dla telefonii
 Name:		spandsp
 Version:	0.0.6
-Release:	0.%{_pre}.%{rel}
+Release:	0.%{subver}.%{rel}
 Epoch:		1
 License:	LGPL v2.1
 Group:		Libraries
-Source0:	http://www.soft-switch.org/downloads/spandsp/%{name}-%{version}%{_pre}.tgz
-# Source0-md5:	98330bc00a581ed8d71ebe34afabbcf9
+Source0:	http://www.soft-switch.org/downloads/spandsp/%{name}-%{version}%{subver}.tgz
+# Source0-md5:	9bdf1d027f1b5dc5e622d707fa1634cb
 URL:		http://www.soft-switch.org/
 BuildRequires:	audiofile-devel
 BuildRequires:	automake
