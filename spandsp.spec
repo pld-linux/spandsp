@@ -16,10 +16,28 @@ Group:		Libraries
 Source0:	http://www.soft-switch.org/downloads/spandsp/%{name}-%{version}%{subver}.tgz
 # Source0-md5:	9bdf1d027f1b5dc5e622d707fa1634cb
 URL:		http://www.soft-switch.org/
-BuildRequires:	audiofile-devel
+#audiofile-devel may be superfluous !
+#BuildRequires:	audiofile-devel
 BuildRequires:	automake
+# AUTO: -- ../t38_manual.xml:3: warning: failed to load external entity "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+BuildRequires:	docbook-dtd43-xml
+# AUTO: -- warning: failed to load external entity "http://docbook.sourceforge.net/release/xsl/current/xhtml/chunk.xsl"
+BuildRequires:	docbook-style-xsl
 BuildRequires:	doxygen
-BuildRequires:	fftw-devel
+#fftw-devel may be superfluous !
+#BuildRequires:	fftw-devel
+# AUTO: -- conftest.c:106:19: fatal error: fftw3.h: No such file or directory
+BuildRequires:	fftw3-common-devel
+# AUTO: -- /usr/bin/ld: cannot find -lfftw3
+BuildRequires:	fftw3-devel
+# AUTO: -- conftest.cc:111:19: fatal error: FL/Fl.H: No such file or directory
+BuildRequires:	fltk-devel
+# AUTO: -- configure:5457: checking for x86_64-pld-linux-gfortran
+BuildRequires:	gcc-fortran
+# AUTO: -- /usr/bin/ld: cannot find -lpcap
+BuildRequires:	libpcap-devel
+# AUTO: -- /usr/bin/ld: cannot find -lsndfile
+BuildRequires:	libsndfile-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	libxslt-progs
