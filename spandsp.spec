@@ -3,6 +3,18 @@
 #	- build and package the 'tests' (sample programs)
 #		should be conditional, as adds BR!
 #
+# Conditional build:
+%bcond_without	mmx		# use MMX instructions
+%bcond_without	sse		# use SSE instructions
+
+%ifnarch athlon pentium3 pentium4
+%undefine	with_mmx
+%endif
+
+%ifnarch pentium3 pentium4
+%undefine	with_sse
+%endif
+
 %define	subver	pre20
 %define	rel	2
 Summary:	DSP functions for telephony
@@ -73,12 +85,8 @@ Statyczna biblioteka spandsp.
 install /usr/share/automake/config.* config
 %configure \
 	--disable-tests \
-%ifarch athlon pentium3 pentium4
-	--enable-mmx \
-%endif
-%ifarch pentium3 pentium4
-	--enable-sse \
-%endif
+	%{?with_mmx:--enable-mmx} \
+	%{?with_sse:--enable-sse} \
 	--enable-doc
 %{__make}
 
