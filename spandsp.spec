@@ -16,7 +16,7 @@
 %endif
 
 %define	subver	pre20
-%define	rel	2
+%define	rel	3
 Summary:	DSP functions for telephony
 Summary(pl.UTF-8):	Funkcje DSP dla telefonii
 Name:		spandsp
@@ -27,7 +27,9 @@ License:	LGPL v2.1
 Group:		Libraries
 Source0:	http://www.soft-switch.org/downloads/spandsp/%{name}-%{version}%{subver}.tgz
 # Source0-md5:	9bdf1d027f1b5dc5e622d707fa1634cb
+Patch0:		x32.patch
 URL:		http://www.soft-switch.org/
+BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	docbook-dtd43-xml
 BuildRequires:	docbook-style-xsl
@@ -38,6 +40,7 @@ BuildRequires:	fltk-devel
 BuildRequires:	libpcap-devel
 BuildRequires:	libsndfile-devel
 BuildRequires:	libtiff-devel
+BuildRequires:	libtool
 BuildRequires:	libxml2-devel
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
@@ -80,9 +83,14 @@ Statyczna biblioteka spandsp.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-install /usr/share/automake/config.* config
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure \
 	--disable-tests \
 	%{?with_mmx:--enable-mmx} \
