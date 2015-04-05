@@ -16,7 +16,7 @@
 %endif
 
 %define	subver	pre20
-%define	rel	3
+%define	rel	4
 Summary:	DSP functions for telephony
 Summary(pl.UTF-8):	Funkcje DSP dla telefonii
 Name:		spandsp
