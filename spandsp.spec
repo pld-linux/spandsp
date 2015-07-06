@@ -6,44 +6,50 @@
 # Conditional build:
 %bcond_without	mmx		# use MMX instructions
 %bcond_without	sse		# use SSE instructions
+%bcond_with	tests		# test programs
 
-%ifnarch athlon pentium3 pentium4
+%ifnarch athlon pentium3 pentium4 %{x8664} x32
 %undefine	with_mmx
 %endif
-
-%ifnarch pentium3 pentium4
+%ifnarch pentium3 pentium4 %{x8664} x32
 %undefine	with_sse
 %endif
 
-%define	subver	pre20
-%define	rel	4
 Summary:	DSP functions for telephony
 Summary(pl.UTF-8):	Funkcje DSP dla telefonii
 Name:		spandsp
 Version:	0.0.6
-Release:	0.%{subver}.%{rel}
+Release:	1
 Epoch:		1
 License:	LGPL v2.1
 Group:		Libraries
-Source0:	http://www.soft-switch.org/downloads/spandsp/%{name}-%{version}%{subver}.tgz
-# Source0-md5:	9bdf1d027f1b5dc5e622d707fa1634cb
+Source0:	http://www.soft-switch.org/downloads/spandsp/%{name}-%{version}.tar.gz
+# Source0-md5:	897d839516a6d4edb20397d4757a7ca3
 Patch0:		x32.patch
 URL:		http://www.soft-switch.org/
-BuildRequires:	autoconf
-BuildRequires:	automake
+BuildRequires:	autoconf >= 2.50
+BuildRequires:	automake >= 1:1.9.5
 BuildRequires:	docbook-dtd43-xml
 BuildRequires:	docbook-style-xsl
 BuildRequires:	doxygen
-BuildRequires:	fftw3-common-devel
-BuildRequires:	fftw3-devel
+%{?with_tests:BuildRequires:	fftw3-common-devel}
+%{?with_tests:BuildRequires:	fftw3-devel}
 BuildRequires:	fltk-devel
-BuildRequires:	libpcap-devel
-BuildRequires:	libsndfile-devel
+BuildRequires:	libjpeg-devel
+%{?with_tests:BuildRequires:	libpcap-devel}
+%{?with_tests:BuildRequires:	libsndfile-devel}
+BuildRequires:	libstdc++-devel
 BuildRequires:	libtiff-devel
+%{?with_tests:BuildRequires:	libtiff-progs}
 BuildRequires:	libtool
-BuildRequires:	libxml2-devel
+BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	libxslt-progs
+%{?with_tests:BuildRequires:	netpbm-progs}
 BuildRequires:	pkgconfig
+%{?with_tests:BuildRequires:	sox}
+%{?with_tests:BuildRequires:	xorg-lib-libX11-devel}
+%{?with_tests:BuildRequires:	xorg-lib-libXext-devel}
+%{?with_tests:BuildRequires:	xorg-lib-libXft-devel}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -92,10 +98,10 @@ Statyczna biblioteka spandsp.
 %{__autoheader}
 %{__automake}
 %configure \
-	--disable-tests \
+	--enable-doc \
 	%{?with_mmx:--enable-mmx} \
 	%{?with_sse:--enable-sse} \
-	--enable-doc
+	%{?with_tests:--enable-tests}
 %{__make}
 
 %install
@@ -112,7 +118,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README NEWS AUTHORS ChangeLog
+%doc AUTHORS ChangeLog DueDiligence NEWS README
 %attr(755,root,root) %{_libdir}/libspandsp.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libspandsp.so.2
 
