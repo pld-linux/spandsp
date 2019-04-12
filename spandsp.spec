@@ -23,10 +23,10 @@ Release:	2
 Epoch:		1
 License:	LGPL v2.1
 Group:		Libraries
-Source0:	http://www.soft-switch.org/downloads/spandsp/%{name}-%{version}.tar.gz
+Source0:	https://www.soft-switch.org/downloads/spandsp/%{name}-%{version}.tar.gz
 # Source0-md5:	897d839516a6d4edb20397d4757a7ca3
 Patch0:		x32.patch
-URL:		http://www.soft-switch.org/
+URL:		https://www.soft-switch.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.9.5
 BuildRequires:	docbook-dtd43-xml
