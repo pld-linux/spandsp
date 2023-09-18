@@ -30,7 +30,7 @@ URL:		https://www.soft-switch.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.9.5
 BuildRequires:	docbook-dtd43-xml
-BuildRequires:	docbook-style-xsl
+BuildRequires:	docbook-style-xsl-nons
 BuildRequires:	doxygen
 %{?with_tests:BuildRequires:	fftw3-common-devel}
 %{?with_tests:BuildRequires:	fftw3-devel}
