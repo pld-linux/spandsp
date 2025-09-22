@@ -19,7 +19,7 @@ Summary:	DSP functions for telephony
 Summary(pl.UTF-8):	Funkcje DSP dla telefonii
 Name:		spandsp
 Version:	0.0.6
-Release:	3
+Release:	4
 Epoch:		1
 License:	LGPL v2.1
 Group:		Libraries
